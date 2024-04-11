@@ -7,10 +7,11 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'maxboisvert/vim-simple-complete'
   use 'rktjmp/lush.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use {'neovim/nvim-lspconfig'}
-
+  use 'wfxr/minimap.vim'
   use {
   'stevearc/overseer.nvim',
   commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
@@ -24,8 +25,6 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
- 
-
 end)
 
 

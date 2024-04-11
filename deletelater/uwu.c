@@ -1,7 +1,7 @@
 
-#include<stdio.h>
+#include <stdio.h>
 int main() {
-printf("hiyaaa");
-printf
-return 0;
+  printf("hiyaaa");
+  printf("hiyamenameetomass");
+  return 0;
 }

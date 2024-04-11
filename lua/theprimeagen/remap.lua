@@ -1,8 +1,8 @@
 -- Open compiler
-vim.keymap.set('','j','k')
-vim.keymap.set('','k','j')
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+vim.keymap.set('t', 'jk', '<C-\\><C-n>')
 vim.opt.shiftwidth=2
+vim.opt.relativenumber=true
 -- Redo last selected option
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -18,9 +18,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
+
+        -- Set buffer local indentation options
+    vim.bo[ev.buf].tabstop = 2        -- Number of spaces that a <Tab> character in the file counts for
+    vim.bo[ev.buf].shiftwidth = 2     -- Number of spaces to use for each step of (auto)indent
+    vim.bo[ev.buf].softtabstop = 2    -- Number of spaces to use in insert mode for a <Tab> key
+    vim.bo[ev.buf].expandtab = true   -- Use spaces instead of tabs
+
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
+
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

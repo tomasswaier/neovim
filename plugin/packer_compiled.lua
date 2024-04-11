@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["minimap.vim"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/minimap.vim",
+    url = "https://github.com/wfxr/minimap.vim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-simple-complete"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/vim-simple-complete",
+    url = "https://github.com/maxboisvert/vim-simple-complete"
   }
 }
 

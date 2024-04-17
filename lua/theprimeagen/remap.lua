@@ -1,8 +1,6 @@
 -- Open compiler
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('t', 'jk', '<C-\\><C-n>')
-vim.opt.shiftwidth=2
-vim.opt.relativenumber=true
 -- Redo last selected option
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -49,10 +47,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 -- AND IF YOUR RIGHT HAND CAUSES YOU TO SIN , CUT IT OFF AND THROW IT AWAY.
-vim.api.nvim_set_keymap('n', '<Left>',  ':echoe "you so dum!"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Right>', ':echoe "you ugly"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Up>',    ':echoe "stinky!!!"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Down>',  ':echoe "pisslow"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Left>',  ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Up>',    ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Down>',  ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
 
 -- IT IS BETTER FOR YOU TO LOSE ONE PART OF YOUR BODY THAN FOR WHOLE BODY TO DEPART INTO HELL. 
 vim.api.nvim_set_keymap('i', '<Left>',  '<Esc>:echoe "KYS"<CR>', { noremap = true, silent = true })

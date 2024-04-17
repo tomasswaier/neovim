@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  cool_name = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/cool_name",
+    url = "https://github.com/cool_name"
+  },
   ["lush.nvim"] = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/lush.nvim",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["shipwright.nvim"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/shipwright.nvim",
+    url = "https://github.com/rktjmp/shipwright.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

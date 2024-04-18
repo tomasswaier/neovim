@@ -16,5 +16,5 @@ require('overseer').setup({
       default_detail = 1
     }
 })
-
+vim.cmd.colorscheme "cool_name"
 vim.cmd [[autocmd BufWritePost init.lua PackerCompile]]

@@ -4,27 +4,23 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
+  use 'mfussenegger/nvim-dap'
   use 'wbthomason/packer.nvim'
   use 'maxboisvert/vim-simple-complete'
   use 'rktjmp/lush.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use {'neovim/nvim-lspconfig'}
   use 'wfxr/minimap.vim'
-  use "~/.config/nvim/lua/theprimeagen/cool_name"
-
- -- use "~/.config/nvim/lua/theprimeagen/hihi_hi"
+  use 'theHamsta/nvim-dap-virtual-text'
+  -- use "~/.config/nvim/lua/theprimeagen/cool_name"
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
   use {
-  'stevearc/overseer.nvim',
-  commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
-  config = function()
-    -- Configuration for overseer.nvim, if needed
-  end
-}
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use "~/.config/nvim/lua/theprimeagen/white_suprimici"
+ -- use "~/.config/nvim/lua/theprimeagen/hihi_hi"
 
-use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
--- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
 end)
 

@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
-  cool_name = {
-    loaded = true,
-    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/cool_name",
-    url = "https://github.com/cool_name"
-  },
   ["lush.nvim"] = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/lush.nvim",
@@ -94,16 +89,30 @@ _G.packer_plugins = {
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/minimap.vim",
     url = "https://github.com/wfxr/minimap.vim"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["overseer.nvim"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
+  ["nvim-nio"] = {
     loaded = true,
-    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/overseer.nvim",
-    url = "https://github.com/stevearc/overseer.nvim"
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -115,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["shipwright.nvim"] = {
-    loaded = true,
-    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/shipwright.nvim",
-    url = "https://github.com/rktjmp/shipwright.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -129,14 +133,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maryann/.local/share/nvim/site/pack/packer/start/vim-simple-complete",
     url = "https://github.com/maxboisvert/vim-simple-complete"
+  },
+  white_suprimici = {
+    loaded = true,
+    path = "/home/maryann/.local/share/nvim/site/pack/packer/start/white_suprimici",
+    url = "/home/maryann/.config/nvim/lua/theprimeagen/white_suprimici"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: overseer.nvim
-time([[Config for overseer.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "overseer.nvim")
-time([[Config for overseer.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

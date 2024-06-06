@@ -1,10 +1,12 @@
 local lspconfig = require('lspconfig')
 require("theprimeagen.remap")
+--require("theprimeagen.nvim-lspconfig")
 require("theprimeagen.packer")
 require("theprimeagen.opt")
+require("theprimeagen.nvim-cmp")
 require("theprimeagen.debugger")
 require'lspconfig'.clangd.setup{}
-require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.luau_lsp.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.jdtls.setup{
     cmd = {'/home/maryann/Conf/jdk_ls/jdtls/bin/jdtls'}

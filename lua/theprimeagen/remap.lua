@@ -1,4 +1,6 @@
 -- Open compiler
+
+
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('t', 'jk', '<C-\\><C-n>')
 -- Redo last selected option

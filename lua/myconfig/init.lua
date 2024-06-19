@@ -1,10 +1,10 @@
 local lspconfig = require('lspconfig')
-require("theprimeagen.remap")
---require("theprimeagen.nvim-lspconfig")
-require("theprimeagen.packer")
-require("theprimeagen.opt")
-require("theprimeagen.nvim-cmp")
-require("theprimeagen.debugger")
+require("myconfig.remap")
+--require("myconfig.nvim-lspconfig")
+require("myconfig.packer")
+require("myconfig.opt")
+require("myconfig.nvim-cmp")
+require("myconfig.debugger")
 require("nvim-lsp-installer").setup({
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
     ui = {

@@ -11,6 +11,8 @@ require('packer').startup(function(use)
     require('myconfig.packer')(use)
 end)
 
+
+
 -- Autocommand to compile Packer whenever packer.lua is saved
 vim.cmd [[autocmd BufWritePost lua/myconfig/packer.lua source <afile> | PackerCompile]]
 

@@ -1,6 +1,7 @@
 local dap, dapui = require("dap"), require("dapui")
 require("nvim-dap-virtual-text").setup()
   require("dapui").setup()
+
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
 end
@@ -17,27 +18,30 @@ dap.adapters.lldb = {
   type = 'executable',
   command = '/usr/bin/lldb-vscode-14', -- adjust as needed, must be absolute path
   name = 'lldb'
+
 }
 
-vim.keymap.set('n', '<Leader>dt', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
 vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
-vim.keymap.set('n', '<Leader>do', function() require('dap').step_over() end)
+vim.keymap.set('n', '<Leader>df', function() require('dap').step_over() end)
+vim.keymap.set('n', '<Leader>ds', function() require('dap').step_back() end)
 vim.keymap.set('n', '<Leader>di', function() require('dap').step_into() end)
 vim.keymap.set('n', '<Leader>du', function() require('dap').step_out() end)
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+vim.keymap.set({'n', 'v'}, '<Leader>dg', function()
   require('dap.ui.widgets').hover()
 end)
 vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
   require('dap.ui.widgets').preview()
 end)
-vim.keymap.set('n', '<Leader>df', function()
+vim.keymap.set('n', '<Leader>do', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.frames)
 end)
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end)
+
+--vim.keymap.set('n', '<Leader>ds', function()
+--  local widgets = require('dap.ui.widgets')
+--  widgets.centered_float(widgets.scopes)
+--end)
 dap.configurations.cpp = {
   {
     name = 'Launch',
@@ -64,3 +68,5 @@ dap.configurations.cpp = {
   },
 }
 dap.configurations.c = dap.configurations.cpp
+
+require("dap-python").setup("/home/mary/.virtualenvs/debugpy/bin/python")

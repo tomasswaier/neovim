@@ -16,10 +16,23 @@ require("nvim-lsp-installer").setup({
     }
 })
 require'lspconfig'.clangd.setup{}
-require'lspconfig'.luau_lsp.setup{}
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.lua_ls.setup{}
+--require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}
 require'lspconfig'.html.setup{}
-vim.opt.background = "dark" -- set this to dark or light
-vim.cmd.colorscheme "oxocarbon"
+
+vim.cmd 'colorscheme paramount-ng'
+
 vim.cmd [[autocmd BufWritePost init.lua PackerCompile]]
 

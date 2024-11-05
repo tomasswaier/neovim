@@ -1,6 +1,10 @@
 vim.cmd[[command! -nargs=0 W write]]
+vim.cmd([[augroup fmt
+    autocmd!
+    autocmd BufWritePre * Neoformat
+  augroup END
+]])
 vim.opt.foldmethod = "indent"
-vim.opt.shiftwidth=2
 vim.opt.relativenumber=true
 vim.opt.termguicolors=true
 vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal nofoldenable]] })

@@ -25,9 +25,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
         -- Set buffer local indentation options
-    vim.bo[ev.buf].tabstop = 2        -- Number of spaces that a <Tab> character in the file counts for
-    vim.bo[ev.buf].shiftwidth = 2     -- Number of spaces to use for each step of (auto)indent
-    vim.bo[ev.buf].softtabstop = 2    -- Number of spaces to use in insert mode for a <Tab> key
     vim.bo[ev.buf].expandtab = true   -- Use spaces instead of tabs
 
     -- Buffer local mappings.

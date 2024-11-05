@@ -61,12 +61,25 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
 }
+--[[
 require('lspconfig')['pyright'].setup {
   capabilities = capabilities
+}
+]]--
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
 }
 require('lspconfig')['luau_lsp'].setup {
   capabilities = capabilities
@@ -77,3 +90,4 @@ require'lspconfig'.html.setup {
 require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
+require'lspconfig'.eslint.setup{}

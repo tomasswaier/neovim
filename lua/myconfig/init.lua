@@ -17,6 +17,7 @@ require("nvim-lsp-installer").setup({
 })
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}
+
 --require'lspconfig'.pyright.setup{}
 require'lspconfig'.pylsp.setup{
   settings = {
@@ -30,7 +31,8 @@ require'lspconfig'.pylsp.setup{
     }
   }
 }
-require'lspconfig'.html.setup{}
+--require'lspconfig'.html.setup{}
+
 
 vim.cmd 'colorscheme paramount-ng'
 

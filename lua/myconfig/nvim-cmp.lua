@@ -64,6 +64,9 @@ cmp.setup.cmdline(':', {
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
 }
+require('lspconfig')['ts_ls'].setup {
+  capabilities = capabilities
+}
 --[[
 require('lspconfig')['pyright'].setup {
   capabilities = capabilities
@@ -81,13 +84,12 @@ require'lspconfig'.pylsp.setup{
     }
   }
 }
-require('lspconfig')['luau_lsp'].setup {
-  capabilities = capabilities
-}
+--[[
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
 require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
-require'lspconfig'.eslint.setup{}
+]]--
+--require'lspconfig'.eslint.setup{}

@@ -32,6 +32,7 @@ return function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         requires = { 'nvim-lua/plenary.nvim' }
     }
+    use 'larsbs/vimterial_dark'
     -- use "~/.config/nvim/lua/myconfig/cool_name"
     -- use "~/.config/nvim/lua/myconfig/white_suprimici"
     -- use "~/.config/nvim/lua/myconfig/hihi_hi"

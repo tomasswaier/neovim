@@ -21,6 +21,7 @@ cmp.setup({
   },
   mapping = {
     ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -66,6 +67,24 @@ require('lspconfig')['clangd'].setup {
 }
 require('lspconfig')['ts_ls'].setup {
   capabilities = capabilities
+}
+capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig')['cssls'].setup {
+  capabilities = capabilities
+
+}
+require('lspconfig')['html'].setup {
+ capabilities = capabilities,
+}
+require('lspconfig')['gopls'].setup {
+  capabilities = capabilities
+
+}
+require('lspconfig')['golangci_lint_ls'].setup {
+  capabilities = capabilities
+
 }
 --[[
 require('lspconfig')['pyright'].setup {

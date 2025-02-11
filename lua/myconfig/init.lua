@@ -17,6 +17,8 @@ require("nvim-lsp-installer").setup({
 })
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.cssls.setup{}
 
 --require'lspconfig'.pyright.setup{}
 require'lspconfig'.pylsp.setup{
@@ -34,7 +36,22 @@ require'lspconfig'.pylsp.setup{
 --require'lspconfig'.html.setup{}
 
 
-vim.cmd 'colorscheme paramount-ng'
+--vim.cmd 'colorscheme paramount-ng'
+--autocmd FileType go colorscheme desert
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "go", "javascript" }, -- Watch both filetypes
+  callback = function(event)
+    local colorschemes = {
+      go = "habamax",
+      javascript = "vimterial_dark",
+    }
+
+    local colorscheme = colorschemes[event.match] -- Lookup in the table
+    if colorscheme then
+      print("Applying " .. colorscheme .. " for " .. event.match)
+      vim.cmd("colorscheme " .. colorscheme)
+    end
+  end,
+})
 
 vim.cmd [[autocmd BufWritePost init.lua PackerCompile]]
-

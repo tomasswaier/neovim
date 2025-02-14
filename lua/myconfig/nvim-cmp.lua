@@ -75,8 +75,21 @@ require('lspconfig')['cssls'].setup {
   capabilities = capabilities
 
 }
-require('lspconfig')['html'].setup {
- capabilities = capabilities,
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.html.setup {
+  capabilities = capabilities,
+  cmd = { "vscode-html-language-server", "--stdio" },
+  filetypes = { "html", "templ" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    },
+    provideFormatter = false
+  }
 }
 require('lspconfig')['gopls'].setup {
   capabilities = capabilities

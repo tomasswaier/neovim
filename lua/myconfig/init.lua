@@ -39,11 +39,12 @@ require'lspconfig'.pylsp.setup{
 --vim.cmd 'colorscheme paramount-ng'
 --autocmd FileType go colorscheme desert
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go", "javascript" }, -- Watch both filetypes
+  pattern = { "go", "javascript","html" }, -- Watch both filetypes
   callback = function(event)
     local colorschemes = {
       go = "habamax",
       javascript = "vimterial_dark",
+      html = "retrobox",
     }
 
     local colorscheme = colorschemes[event.match] -- Lookup in the table

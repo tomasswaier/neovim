@@ -1,20 +1,20 @@
+require("myconfig.lazy")
 local lspconfig = require('lspconfig')
 require("myconfig.remap")
 --require("myconfig.nvim-lspconfig")
-require("myconfig.packer")
 require("myconfig.opt")
 require("myconfig.nvim-cmp")
 require("myconfig.debugger")
-require("nvim-lsp-installer").setup({
-    automatic_installation = true,
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
+--require("nvim-lsp-installer").setup({
+--    automatic_installation = true,
+--    ui = {
+--        icons = {
+--            server_installed = "✓",
+--            server_pending = "➜",
+--            server_uninstalled = "✗"
+--        }
+--    }
+--})
 --lsps
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}

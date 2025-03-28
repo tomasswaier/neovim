@@ -2,6 +2,7 @@ return function(use)
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use "rafamadriz/friendly-snippets"
+    use 'fatih/vim-go'
     use 'hrsh7th/cmp-path'
     use 'sbdchd/neoformat'
     use 'hrsh7th/cmp-cmdline'

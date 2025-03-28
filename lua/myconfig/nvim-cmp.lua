@@ -99,6 +99,19 @@ require('lspconfig')['golangci_lint_ls'].setup {
   capabilities = capabilities
 
 }
+require'lspconfig'.asm_lsp.setup({
+    cmd = { "asm-lsp" },
+    filetypes = { "asm","s","S","nasm"},
+    root_dir = function() return vim.fn.getcwd() end,
+    settings = {
+        ["asm-lsp"] = {
+            enableHighlighting = true,
+            hoverInfo = true,
+            completion = true,
+        }
+    }
+})
+
 --[[
 require('lspconfig')['pyright'].setup {
   capabilities = capabilities

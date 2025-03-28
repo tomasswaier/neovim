@@ -1,4 +1,4 @@
-vim.g.neoformat_enabled_html = { "prettier" }
+--vim.g.neoformat_enabled_html = { "js-beautify" }
 vim.g.neoformat_run_all_formatters = 1
 
 vim.cmd[[command! -nargs=0 W write]]

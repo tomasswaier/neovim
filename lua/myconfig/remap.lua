@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 -- AND IF YOUR RIGHT HAND CAUSES YOU TO SIN , CUT IT OFF AND THROW IT AWAY.
+--[[
 vim.api.nvim_set_keymap('n', '<Left>',  ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Right>', ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Up>',    ':echoe "SKILL ISSUE"<CR>', { noremap = true, silent = true })
@@ -61,4 +62,5 @@ vim.api.nvim_set_keymap('i', '<Left>',  '<Esc>:echoe "KYS"<CR>', { noremap = tru
 vim.api.nvim_set_keymap('i', '<Right>', '<Esc>:echoe "KYS"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<Up>',    '<Esc>:echoe "KYS"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<Down>',  '<Esc>:echoe "KYS"<CR>', { noremap = true, silent = true })
+]]
 -- MATTHER 5:30 (some guy on reddit)

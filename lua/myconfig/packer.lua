@@ -17,7 +17,7 @@ require('pckr').add {
     { "catppuccin/nvim", as = "catppuccin" },
     'nyoom-engineering/oxocarbon.nvim',
     'neovim/nvim-lspconfig',
-    'wfxr/minimap.vim',
+    --'wfxr/minimap.vim',
 
     {
         "chrsm/paramount-ng.nvim",

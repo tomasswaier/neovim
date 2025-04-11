@@ -102,6 +102,15 @@ require('lspconfig')['golangci_lint_ls'].setup {
   capabilities = capabilities
 
 }
+require('lspconfig')['robotframework_ls'].setup{
+  --cmd = {
+  --  "~/.local/share/nvim/lsp_servers/robotframework_ls/venv/bin/robotframework_ls"
+  --},
+  --filetypes = { "robot" },
+  --root_dir = require('lspconfig').util.root_pattern(".git", "."),
+  capabilities = capabilities
+}
+
 require'lspconfig'.asm_lsp.setup({
     cmd = { "asm-lsp" },
     filetypes = { "asm","s","S","nasm"},

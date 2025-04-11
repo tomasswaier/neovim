@@ -21,6 +21,7 @@ require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.tailwindcss.setup{}
+require'lspconfig'.robotframework_ls.setup{}
 
 --require'lspconfig'.pyright.setup{}
 require'lspconfig'.pylsp.setup{

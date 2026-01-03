@@ -12,23 +12,20 @@ require('pckr').add {
     'mfussenegger/nvim-dap',
     'mfussenegger/nvim-dap-python',
     'wbthomason/packer.nvim',
-
+    'rebelot/kanagawa.nvim',
     'rktjmp/lush.nvim',
     { "catppuccin/nvim", as = "catppuccin" },
     'nyoom-engineering/oxocarbon.nvim',
     'neovim/nvim-lspconfig',
-    --'wfxr/minimap.vim',
-
+    'Myriad-Dreamin/tinymist',
     {
         "chrsm/paramount-ng.nvim",
         requires = { "rktjmp/lush.nvim" }
     },
-
     {
         "williamboman/nvim-lsp-installer",
         -- requires = { "neovim/nvim-lspconfig" }, -- optional
     },
-
     'theHamsta/nvim-dap-virtual-text',
     'integralist/vim-mypy',
     {

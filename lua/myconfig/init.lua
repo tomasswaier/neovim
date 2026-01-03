@@ -5,6 +5,7 @@ require("myconfig.packer")
 require("myconfig.opt")
 require("myconfig.nvim-cmp")
 require("myconfig.debugger")
+--[[
 require("nvim-lsp-installer").setup({
     automatic_installation = true,
     ui = {
@@ -15,6 +16,7 @@ require("nvim-lsp-installer").setup({
         }
     }
 })
+]]
 --lsps
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}
@@ -22,6 +24,19 @@ require'lspconfig'.html.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.robotframework_ls.setup{}
+require'lspconfig'.intelephense.setup{}
+--[[require("lspconfig")["tinymist"].setup {
+
+        settings = {
+
+                formatterMode = "typstyle",
+
+                exportPdf = "onType",
+
+                semanticTokens = "disable"
+
+        }
+        ]]
 
 --require'lspconfig'.pyright.setup{}
 require'lspconfig'.pylsp.setup{
@@ -42,21 +57,24 @@ require'lspconfig'.pylsp.setup{
 --vim.cmd 'colorscheme paramount-ng'
 --autocmd FileType go colorscheme desert
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go", "javascript","html","c" },
+  pattern = { "go", "javascript","html","c",'cs',"typ","lua","vue"},
   callback = function(event)
     local colorschemes = {
       go = "habamax",
       javascript = "vimterial_dark",
       html = "retrobox",
       c= "catppuccin",
+      cs= "slate",
+      typ="kanagawa",
+      lua="kanagawa-dragon",
+      vue="catppuccin",
     }
 
     local colorscheme = colorschemes[event.match]
     if colorscheme then
-      print("Applying " .. colorscheme .. " for " .. event.match)
       vim.cmd("colorscheme " .. colorscheme)
     end
   end,
 })
 
-vim.cmd [[autocmd BufWritePost init.lua PackerCompile]]
+--vim.cmd [[autocmd BufWritePost init.lua PackerCompile]]

@@ -1,8 +1,13 @@
--- Set up your cmp configuration
 local nvim_lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.inlayHint = {
+  dynamicRegistration = false,
+  resolveSupport = {
+    properties = {}
+  }
+}
+
 
 nvim_lsp.html.setup {
   capabilities = capabilities,
@@ -22,6 +27,7 @@ cmp.setup({
   mapping = {
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -65,6 +71,9 @@ cmp.setup.cmdline(':', {
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
 }
+require('lspconfig')['vue_ls'].setup {
+  capabilities = capabilities
+}
 require('lspconfig')['ts_ls'].setup {
   capabilities = capabilities
 }
@@ -81,9 +90,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 nvim_lsp.html.setup {
   capabilities = capabilities,
   cmd = { "vscode-html-language-server", "--stdio" },
-  filetypes = { "html", "templ" },
+  filetypes = { "html", "templ", "gohtml","vue" },
   init_options = {
-    configurationSection = { "html", "css", "javascript" },
+    configurationSection = { "html", "css", "javascript","vue" },
     embeddedLanguages = {
       css = true,
       javascript = true
@@ -110,6 +119,26 @@ require('lspconfig')['robotframework_ls'].setup{
   --root_dir = require('lspconfig').util.root_pattern(".git", "."),
   capabilities = capabilities
 }
+
+local util = require('lspconfig.util')
+
+require('lspconfig').omnisharp.setup {
+  capabilities = capabilities,
+  root_dir = util.root_pattern('*.sln', '*.csproj', '.git'),
+  cmd = {
+    "omnisharp",
+    "--languageserver",
+    "--hostPID", tostring(vim.fn.getpid())
+  },
+  settings = {
+    omnisharp = {
+      enableRoslynAnalyzers = true,
+      organizeImportsOnFormat = true,
+      enableImportCompletion = true,
+    }
+  }
+}
+
 
 require'lspconfig'.asm_lsp.setup({
     cmd = { "asm-lsp" },
